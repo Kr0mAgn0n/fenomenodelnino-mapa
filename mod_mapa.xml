@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Mapa</name>
+    <author>Mario Lamas</author>
+    <version>1.0.0</version>
+    <description>Mapa de alertas del portal sobre el Fenómeno del Niño.</description>
+    <files>
+        <filename>mod_mapa.xml</filename>
+        <filename module="mod_mapa">mod_mapa.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>js/rotater.js</filename>
+        <filename>js/tabs.js</filename>
+    </files>
+    <config>
+    </config>
+</extension>
