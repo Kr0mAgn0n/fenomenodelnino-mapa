@@ -26,7 +26,7 @@ class MapaController extends JControllerLegacy
             
             $query->insert("mapa")
                 ->columns($columns)
-                ->values("1, '$titulo', $latitud, $longitud, '$descripcion', NOW()");
+                ->values("'$area', '$titulo', $latitud, $longitud, '$descripcion', NOW()");
                 
             $db->setQuery($query);
             $db->execute();
@@ -34,5 +34,38 @@ class MapaController extends JControllerLegacy
         }  
         
         $app->redirect(JURI::base().'index.php?option=com_mapa');
+    }
+    
+    function deleteData () {
+        
+        $app = JFactory::getApplication();
+        $jinput = $app->input;
+        
+        $check_list = $jinput->get('check_list', '', 'ARRAY');
+        
+        $db = JFactory::getDBO();
+        $query = $db->getQuery(true);
+        
+        
+        
+        $where = "id in (";
+        
+        if ($check_list) {
+            foreach ($check_list as $check) {
+                if ($check == end($check_list)) {
+                    $where .= "$check)";
+                } else {
+                    $where .= "$check, ";
+                }
+                
+            }
+        }
+
+        $query->delete("mapa")->where($where);
+        $db->setQuery($query);
+        $db->execute();
+        
+        $app->redirect(JURI::base().'index.php?option=com_mapa');
+        
     }
 }

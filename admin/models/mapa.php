@@ -31,7 +31,7 @@ class MapaModelMapa extends JModelItem
     function getAlertas() {
         $db = JFactory::getDBO();
         $query = $db->getQuery(true);
-        $query->select("area_id,titulo,fecha");
+        $query->select("id,area_id,titulo,fecha");
         $query->from("mapa");
         $db->setQuery((string) $query);
         $alertas = $db->loadObjectList();
@@ -40,13 +40,13 @@ class MapaModelMapa extends JModelItem
         
         if ($alertas) {
             foreach ($alertas as $alerta) {
+                $id = $alerta->id;
                 $area_id = $alerta->area_id;
                 $titulo = $alerta->titulo;
                 $fecha = $alerta->fecha;
                 $area_name = $this->AreaById($area_id);
-                $area = array($area_id, $area_name);
                 
-                $aux[] = (object) array('area' => $area, 'titulo' => $titulo, 'fecha' => $fecha);
+                $aux[] = (object) array('id' => $id, 'area_name' => $area_name, 'titulo' => $titulo, 'fecha' => $fecha);
             }
         } 
         
@@ -62,6 +62,16 @@ class MapaModelMapa extends JModelItem
         $db->setQuery($query);
         $area = $db->loadObjectList();
         
-        return $area;
+        $aux = array();
+        
+        if ($area) {
+            foreach ($area as $a) {
+                $name = $a->area;
+                
+                $aux[] = $name;
+            }
+        }
+        
+        return $aux[0];
     } 
 }
