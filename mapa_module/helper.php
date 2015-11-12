@@ -33,7 +33,7 @@ class ModMapaHelper
         $query = $db->getQuery(true);
         $query->select("area_id,titulo,latitud,longitud,descripcion");
         $query->from("mapa");
-        $db->setQuery((string) $query);
+        $db->setQuery((string) $query,0 ,14);
         $alertas = $db->loadObjectList();
         
         $aux = array();

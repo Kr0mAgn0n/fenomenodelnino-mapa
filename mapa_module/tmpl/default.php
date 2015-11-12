@@ -27,6 +27,14 @@ defined('_JEXEC') or die; ?>
     height: 170px;
     overflow-y: auto;
 }
+
+#leyenda {
+    text-align: left;
+}
+
+#leyenda img {
+    margin: 0px;
+}
 </style>
 
 <div class="row-fluid">
