@@ -3,18 +3,46 @@
 defined('_JEXEC') or die; ?>
 
 <style>
+#entrada-alerta {
+    margin-bottom: 10px;
+}
+
+#entradas {
+    margin-bottom: 10px;
+}
+
+#alerta-form p {
+    text-align: center;
+}
+
+#borrar-form p {
+    text-align: center;
+}
 
 #alerta-form .error {
     color: red;
 }
 
+#entradas {
+    width: 100%;
+}
+
+#entradas td {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+#entrada-alerta {
+    width: 100%;
+}
+
 </style>
 
-<div class="row-fluid">
+<div class="container">
     <div class="span6">
         
         <form id="alerta-form" action="<?php echo JRoute::_('index.php?option=com_mapa&task=saveData'); ?>" method="post">
-            <table>
+            <table id="entrada-alerta">
                 <tr>
                     <td><label for="area">Área:</label></td>
                     <td>
@@ -44,7 +72,7 @@ defined('_JEXEC') or die; ?>
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Guardar" />
+            <p><input type="submit" value="Guardar" /></p>
         </form>
         
         <script src="/administrator/components/com_mapa/js/jquery.validate.min.js" type="text/javascript"></script>
@@ -92,7 +120,7 @@ defined('_JEXEC') or die; ?>
     </div>
     <div class="span6">
         <form id="borrar-form" action="<?php echo JRoute::_('index.php?option=com_mapa&task=deleteData'); ?>" method="post">
-            <table>
+            <table id="entradas">
                 <tr>
                     <th></th>
                     <th>Área</th>
@@ -112,7 +140,7 @@ defined('_JEXEC') or die; ?>
                 <?php }
                 }?>
             </table>
-            <input type="submit" value="Borrar" />
+            <p><input type="submit" value="Borrar" /></p>
             
             <script>
             

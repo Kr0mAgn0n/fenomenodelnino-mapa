@@ -26,21 +26,18 @@ defined('_JEXEC') or die; ?>
     </div>
     <div class="span6">
         
-        <ul id="tabs"> 
-            <li><a class="tab" href="#" id="one">One</a></li> 
-            <li><a class="tab" href="#" id="two">Two</a></li> 
-            <li><a class="tab" href="#" id="three">Three</a></li> 
+        <ul id="tabs" class="nav nav-tabs" data-behavior="BS.Tabs"> 
+            <?php foreach ($this->areas as $area) { ?>
+                <li><a href="#<?php echo $area->area; ?>"><?php echo $area->area; ?></a></li> 
+            <?php } ?>
         </ul> 
-        <div id="home"> 
-            <div class="feature"> 
-                Primer texto
-            </div> 
-            <div class="feature""> 
-                Segundo texto
-            </div> 
-            <div class="feature"> 
-                Tercer texto
-            </div> 
+        <div id="content"> 
+            <?php foreach ($this->areas as $area) { ?>
+                <div id="<?php echo $area->area; ?>">
+                    <?php echo $area->area; ?>
+                </div>
+            <?php } ?>
+            
         </div>
 
 
