@@ -32,9 +32,10 @@ defined('_JEXEC') or die; ?>
     text-align: left;
 }
 
-#leyenda img {
+#leyenda img, #leyenda img:hover {
     margin: 0px;
 }
+
 </style>
 
 <div class="row-fluid">
