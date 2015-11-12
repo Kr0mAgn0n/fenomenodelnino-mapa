@@ -11,14 +11,6 @@
         </sql>
     </install>
  
-	<files folder="site">
-		<filename>index.html</filename>
-		<filename>mapa.php</filename>
-		<filename>controller.php</filename>
-		<folder>views</folder>
-		<folder>models</folder>
-	</files>
- 
 	<administration>
 		<menu link='index.php?option=com_mapa'>Mapa</menu>
 		<files folder="admin">
