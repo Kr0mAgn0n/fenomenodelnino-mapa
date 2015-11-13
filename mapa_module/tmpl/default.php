@@ -32,9 +32,10 @@ defined('_JEXEC') or die; ?>
     text-align: left;
 }
 
-#leyenda img, #leyenda img:hover {
+body.jsn-homepage #jsn-content-top div.jsn-modulecontainer div.jsn-modulecontainer_inner:hover img {
     margin: 0px;
 }
+
 
 </style>
 
